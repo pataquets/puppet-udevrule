@@ -9,6 +9,7 @@
 <%- if symlink_match then -%>SYMLINK=="<%=symlink_match-%>",<%- end -%>
 <%- if name_set then -%>NAME="<%= name_set-%>",<%- end -%>
 <%- if symlink_add then -%>SYMLINK+="<%=symlink_add-%>",<%- end -%>
+<%- if symlink_set then -%>SYMLINK="<%=symlink_set-%>",<%- end -%>
 <%- if attrs then -%>
 <%- attrs.each do |attr| -%>
 <%- attr.each do |name, value| %>ATTRS{<%=name-%>}=="<%=value-%>",<%- end -%>

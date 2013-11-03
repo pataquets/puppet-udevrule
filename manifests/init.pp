@@ -52,6 +52,7 @@ define udevrule (
 	$symlink_match	= false,
 	$name_set		= false,
 	$symlink_add	= false,
+	$symlink_set	= false,
 	$attrs			= false,
 	$run_cmd		= false,
 	$owner			= false,
