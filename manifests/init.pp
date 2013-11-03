@@ -66,6 +66,8 @@ define udevrule (
 		$file_ensure = absent
 	}
 
+	include udev::service
+
 	file { $name:
 		ensure	=> $file_ensure,
 		path    => "/etc/udev/rules.d/${name}.rules",
@@ -76,9 +78,12 @@ define udevrule (
 		notify	=> Service['udev'],
 	}
 
+}
+
+class udev::service ( $ensure = running )
+{
 	service { ['udev']:
-		ensure	=> running,
+		ensure	=> $ensure,
 		restart	=> 'udevadm control --reload-rules',
 	}
-
 }
